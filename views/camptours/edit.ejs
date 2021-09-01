@@ -1,0 +1,45 @@
+<% layout('./layouts/boilerplate') %>
+     
+    <div class="row">
+        <h1 class="text-muted">Edit Camptour</h1>
+        <form action="/camptours/<%= camptour._id %>?_method=PUT" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title:</label>
+                <input class="form-control" type="text" id="title" name="camptour[title]" value="<%= camptour.title %>">
+            </div>
+
+            <div class="mb-3">
+                <label  class="form-label" for="location">Location:</label>
+                <input  class="form-control"type="text" id="location" name="camptour[location]" value="<%= camptour.location %>">
+            </div>
+
+            <div class="mb-3">
+                <label  class="form-label" for="location">Image Url:</label>
+                <input  class="form-control" type="text" id="image" name="camptour[image]" value="<%= camptour.image %>">
+            </div>
+
+            <div class="mb-3">
+                <label  class="form-label" for="price">Price:</label>
+                 <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" 
+                    id="price"
+                    name="camptour[price]"
+                    placeholder="0" 
+                    aria-label="price-label" aria-describedby="price-label"
+                    value="<%= camptour.price %>">
+                </div>
+            </div>
+           
+            <div class="mb-3">
+                <label  class="form-label" for="description">Description:</label>
+                <textarea  class="form-control" type="text" id="description" name="camptour[description]"><%= camptour.description %></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary">Update Camptour</button>
+            </div>
+            
+        </form>
+        <a href="/camptours">Back to All Camptour</a>
+    </div>
+  
